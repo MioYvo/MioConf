@@ -1,0 +1,11 @@
+[https]
+	proxy = http://127.0.0.1:7890
+[alias]
+	co = checkout
+	cm = commit -m
+	pl = pull
+	ph = push
+	last = log -1 HEAD --stat
+	se = !git rev-list --all | xargs git grep -F
+	st = status
+	ck = checkout
