@@ -1,0 +1,49 @@
+删除Fcitx4
+
+sudo pacman -Rs $(pacman -Qsq fcitx)
+
+安装fcitx5
+
+sudo pacman -S fcitx5 
+sudo pacman -S fcitx5-configtool  
+sudo pacman -S fcitx5-qt
+sudo pacman -S fcitx5-gtk
+sudo pacman -S fcitx5-chinese-addons
+sudo pacman -S fcitx5-material-color
+sudo pacman -S kcm-fcitx5
+sudo pacman -S fcitx5-lua
+
+配置environment
+
+sudo chmod 777 /etc/environment
+vim  /etc/environment
+
+将这些内容添加进去
+
+GTK_IM_MODULE DEFAULT=fcitx
+QT_IM_MODULE  DEFAULT=fcitx
+XMODIFIERS    DEFAULT=@im=fcitx
+INPUT_METHOD  DEFAULT=fcitx
+SDL_IM_MODULE DEFAULT=fcitx
+
+注意：在KDE桌面环境之中，将会自动启动Fcitx5
+
+注意：我们需要reboot才会生成classicui.conf
+使用fcitx5-material-color
+
+sudo chmod 777 ~/.config/fcitx5/conf/classicui.conf
+vim ~/.config/fcitx5/conf/classicui.conf
+
+将深色主题内容加进去
+
+# 垂直候选列表
+Vertical Candidate List=False
+ 
+# 按屏幕 DPI 使用
+PerScreenDPI=True
+ 
+# Font (设置成你喜欢的字体)
+Font="思源黑体 CN Medium 13"
+ 
+# 主题
+Theme=Material-Color-DeepPurple
