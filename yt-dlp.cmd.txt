@@ -1,0 +1,5 @@
+# music
+yt-dlp --audio-format mp3 -f 251 -x --proxy "socks5://100.64.0.15:11081" -P ~/Music https://www.youtube.com/watch\?v\=SOME
+
+# video
+yt-dlp --sub-lang zh-Hans,en --write-auto-subs --convert-subs srt -f 620+140 --proxy "socks5://100.64.0.15:11081" -P ~/Videos https://www.youtube.com/watch\?v\=SOME
